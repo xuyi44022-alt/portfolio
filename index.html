@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>许毅 · 作品集</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --gold: #f0b840;
+    --orange: #e8782a;
+    --rust: #c44e1a;
+    --bg: #faf5ed;
+    --card: #fff;
+    --ink: #1a1a1a;
+    --ink2: #2d2d2d;
+    --muted: #8a7560;
+    --line: #e8d8c0;
+    --tag-bg: #fef3df;
+    --tag-text: #c44e1a;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,245,237,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    padding: 0 24px;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 52px;
+  }
+  .nav-brand { font-weight: 700; font-size: 17px; color: var(--rust); }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: color .15s; }
+  .nav-links a:hover { color: var(--orange); }
+
+  /* --- hero --- */
+  .hero {
+    padding: 100px 24px 60px;
+    background: linear-gradient(160deg, #fef8ee 0%, #faf5ed 40%, #f7ecdb 100%);
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block; background: var(--rust); color: #fff;
+    font-size: 13px; font-weight: 600; padding: 4px 16px;
+    border-radius: 20px; letter-spacing: 0.04em; margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
+  .hero h1 span { color: var(--rust); }
+  .hero .sub { font-size: 17px; color: var(--muted); margin: 12px 0 24px; }
+  .hero-metrics { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; }
+  .hero-metric .num { font-size: 30px; font-weight: 800; color: var(--orange); }
+  .hero-metric .label { font-size: 13px; color: var(--muted); }
+
+  /* --- video gallery --- */
+  .gallery { max-width: 1100px; margin: 0 auto; padding: 60px 24px 80px; }
+  .gallery-header { margin-bottom: 48px; }
+  .gallery-header h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.01em; }
+  .gallery-header p { font-size: 15px; color: var(--muted); margin-top: 6px; }
+
+  .video-grid { display: flex; flex-direction: column; gap: 48px; }
+
+  .video-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow .25s;
+  }
+  .video-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+
+  .video-card .video-wrap {
+    position: relative;
+    background: #0a0a0a;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 320px;
+  }
+  .video-card video {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .video-card video.hidden { display: none; }
+  .video-placeholder {
+    display: none;
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; color: var(--muted); padding: 40px;
+    text-align: center;
+    position: absolute; inset: 0;
+  }
+  .video-placeholder.show { display: flex; }
+  .video-placeholder .ph-icon { font-size: 40px; opacity: 0.5; }
+  .video-placeholder .ph-text { font-size: 13px; }
+  .video-card .info {
+    padding: 28px 28px 28px 0;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .video-card .info .project-tag {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    background: var(--tag-bg); color: var(--tag-text);
+    padding: 3px 12px; border-radius: 10px; margin-bottom: 12px;
+    width: fit-content;
+  }
+  .video-card .info h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .video-card .info .meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .video-card .info .desc { font-size: 14px; color: var(--ink2); line-height: 1.8; }
+  .video-card .info .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .video-card .info .tags span {
+    font-size: 12px; color: var(--muted);
+    border: 1px solid var(--line); padding: 4px 12px; border-radius: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .video-card { grid-template-columns: 1fr; }
+    .video-card .info { padding: 0 24px 24px; }
+    .hero h1 { font-size: 28px; }
+    .hero-metrics { gap: 20px; }
+    .hero-metric .num { font-size: 24px; }
+  }
+
+  /* --- skills + contact --- */
+  .section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
+  .section h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+  .section .sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .skill-pills span {
+    font-size: 14px; background: var(--card); border: 1px solid var(--line);
+    padding: 10px 20px; border-radius: 24px; transition: all .15s;
+  }
+  .skill-pills span:hover { border-color: var(--gold); background: #fffbf2; }
+
+  .contact-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .contact-row a, .contact-row span {
+    display: inline-flex; align-items: center; gap: 6px;
+    text-decoration: none; color: var(--ink); font-size: 14px; font-weight: 600;
+    padding: 10px 20px; background: var(--card); border: 1px solid var(--line);
+    border-radius: 24px; transition: all .15s;
+  }
+  .contact-row a:hover { border-color: var(--gold); background: #fffbf2; }
+
+  .footer-note { max-width: 1100px; margin: 0 auto; padding: 0 24px 20px; font-size: 13px; color: var(--muted); }
+
+  /* --- how to update --- */
+  .setup-note {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px 40px;
+    font-size: 12px; color: var(--muted);
+  }
+  .setup-note code { background: #f0e8d8; padding: 1px 6px; border-radius: 3px; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">许毅</span>
+    <ul class="nav-links">
+      <li><a href="#works">作品</a></li>
+      <li><a href="#skills">技能</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">求职中 · 广州</div>
+  <h1>短视频全链路专家<br><span>× AI 工作流操盘手</span></h1>
+  <p class="sub">7 年短视频经验 · 从策划到发布 · 从 0 到商业化闭环</p>
+  <div class="hero-metrics">
+    <div class="hero-metric"><div class="num">7.2<span style="font-size:16px;font-weight:400;"> 万</span></div><div class="label">抖音粉丝</div></div>
+    <div class="hero-metric"><div class="num">1400<span style="font-size:16px;font-weight:400;"> 万</span></div><div class="label">单条最高播放</div></div>
+    <div class="hero-metric"><div class="num">150<span style="font-size:16px;font-weight:400;"> 万</span></div><div class="label">单月最高 GMV</div></div>
+    <div class="hero-metric"><div class="num">7<span style="font-size:16px;font-weight:400;"> 年</span></div><div class="label">全链路经验</div></div>
+  </div>
+</section>
+
+<!-- ========== VIDEO GALLERY ========== -->
+<section class="gallery" id="works">
+  <div class="gallery-header">
+    <h2>作品展示</h2>
+    <p>点击视频播放，每段作品附有项目背景说明</p>
+  </div>
+
+  <div class="video-grid">
+
+    <!-- ====== 项目 1 ====== -->
+    <div class="video-card">
+      <div class="video-wrap">
+        <video controls preload="metadata">
+          <source src="videos/demo-01.mp4" type="video/mp4" />
+        </video>
+        <div class="video-placeholder">
+          <div class="ph-icon">🎬</div>
+          <div class="ph-text">视频待添加<br>将 mp4 文件放入 videos/ 文件夹</div>
+        </div>
+      </div>
+      <div class="info">
+        <span class="project-tag">个人 IP</span>
+        <h3>「晚风」抖音个人 IP</h3>
+        <div class="meta">2019 — 2022 · 7.2 万粉丝 · 116.4 万赞</div>
+        <p class="desc">独立完成选题策划、拍摄、剪辑、运营全流程。从 0 到 1 验证了个人起号的全链路方法论，沉淀大量剪辑教程和高播放内容。</p>
+        <div class="tags">
+          <span>个人IP</span><span>剪辑教程</span><span>账号增长</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 项目 2 ====== -->
+    <div class="video-card">
+      <div class="video-wrap">
+        <video controls preload="metadata">
+          <source src="videos/demo-02.mp4" type="video/mp4" />
+        </video>
+        <div class="video-placeholder">
+          <div class="ph-icon">🎬</div>
+          <div class="ph-text">视频待添加</div>
+        </div>
+      </div>
+      <div class="info">
+        <span class="project-tag">爆款内容</span>
+        <h3>剪映首批推广 · 单条 1400 万播放</h3>
+        <div class="meta">2020 — 2021 · 剪映 APP 野生推广达人</div>
+        <p class="desc">在剪映早期阶段输出大量教程内容，成为社区首批 KOL。对工具类内容的敏感度和规模传播能力得到验证。</p>
+        <div class="tags">
+          <span>爆款内容</span><span>工具推广</span><span>剪映教程</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 项目 3 ====== -->
+    <div class="video-card">
+      <div class="video-wrap">
+        <video controls preload="metadata">
+          <source src="videos/demo-03.mp4" type="video/mp4" />
+        </video>
+        <div class="video-placeholder">
+          <div class="ph-icon">🎬</div>
+          <div class="ph-text">视频待添加</div>
+        </div>
+      </div>
+      <div class="info">
+        <span class="project-tag">品牌操盘</span>
+        <h3>快手护肤品牌 IP 操盘</h3>
+        <div class="meta">2022 · 单月 GMV 150 万</div>
+        <p class="desc">入职公司后主导快手护肤 IP 品牌的内容策略与执行。从账号定位、日常内容到直播引流全链路负责，实现商业闭环。</p>
+        <div class="tags">
+          <span>品牌操盘</span><span>直播带货</span><span>商业变现</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 项目 4 ====== -->
+    <div class="video-card">
+      <div class="video-wrap">
+        <video controls preload="metadata">
+          <source src="videos/demo-04.mp4" type="video/mp4" />
+        </video>
+        <div class="video-placeholder">
+          <div class="ph-icon">🎬</div>
+          <div class="ph-text">视频待添加</div>
+        </div>
+      </div>
+      <div class="info">
+        <span class="project-tag">起号案例</span>
+        <h3>知识类账号 · 6 个月 0 → 7.8 万粉丝</h3>
+        <div class="meta">2020 — 2022 · 冷启动全流程</div>
+        <p class="desc">从零搭建知识类抖音账号，定位、选题体系、发布节奏全部独立完成。验证了知识类内容的冷启动方法论。</p>
+        <div class="tags">
+          <span>知识付费</span><span>冷启动</span><span>起号方法论</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 项目 5 —— 占位 ====== -->
+    <div class="video-card">
+      <div class="video-wrap">
+        <video controls preload="metadata">
+          <source src="videos/demo-05.mp4" type="video/mp4" />
+        </video>
+        <div class="video-placeholder">
+          <div class="ph-icon">🎬</div>
+          <div class="ph-text">视频待添加</div>
+        </div>
+      </div>
+      <div class="info">
+        <span class="project-tag">日化案例</span>
+        <h3>「北欧早晨」日化信息流</h3>
+        <div class="meta">日化文案 · 混剪 · 投放素材</div>
+        <p class="desc">日化品类短视频内容创作，包括产品文案策划、素材混剪、信息流投放素材制作。熟悉日化赛道的文案风格和投放逻辑。</p>
+        <div class="tags">
+          <span>日化文案</span><span>信息流</span><span>混剪</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 项目 6 —— 占位 ====== -->
+    <div class="video-card">
+      <div class="video-wrap">
+        <video controls preload="metadata">
+          <source src="videos/demo-06.mp4" type="video/mp4" />
+        </video>
+        <div class="video-placeholder">
+          <div class="ph-icon">🎬</div>
+          <div class="ph-text">视频待添加</div>
+        </div>
+      </div>
+      <div class="info">
+        <span class="project-tag">AI 自动化</span>
+        <h3>AI 内容创作管线</h3>
+        <div class="meta">Obsidian + DeepSeek + Remotion</div>
+        <p class="desc">从口述录音到成品视频的半自动化管线：语音转文字 → AI 整理去自嗨 → 人工打磨 → 自动合成字幕/配乐/B-roll。单人产能大幅提升。</p>
+        <div class="tags">
+          <span>AI 自动化</span><span>工作流</span><span>效率工具</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section class="section" id="skills">
+  <h2>核心能力</h2>
+  <p class="sub">短视频全链路 × AI 工具链</p>
+  <div class="skill-pills">
+    <span>前期策划 · 选题定位</span>
+    <span>场景布光 · 画面构图</span>
+    <span>拍摄执行 · 多机位</span>
+    <span>后期剪辑 · 达芬奇调色</span>
+    <span>抖音 / 快手运营</span>
+    <span>直播引流 · 带货</span>
+    <span>账号冷启动 · 起号</span>
+    <span>数据分析 · 复盘</span>
+    <span>剪映全功能精通</span>
+    <span>Claude Code 自动化</span>
+    <span>Obsidian 知识管理</span>
+    <span>AI 提示词工程</span>
+    <span>Remotion 视频合成</span>
+    <span>MiniMax 配音/配乐</span>
+    <span>DeepSeek 配置联动</span>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section" id="contact">
+  <h2>联系我</h2>
+  <p class="sub">期待与您交流</p>
+  <div class="contact-row">
+    <span>📍 广州 · 白云区</span>
+    <a href="https://www.douyin.com/user/WanFeng789" target="_blank">🎵 抖音「晚风」</a>
+    <span>📱 微信 / 手机同号</span>
+    <span>📧 面试邀请请发邮件</span>
+  </div>
+</section>
+
+<div class="footer-note" style="padding-bottom:40px;">
+  <p>求职意向：摄影摄像师 / 内容创作主管 / 账号运营负责人 / IP 打造操盘手</p>
+  <p style="margin-top:4px;">目标赛道：短视频 MCN · 品牌电商 · 本地生活 · 美妆服饰 · 知识付费</p>
+</div>
+
+<!-- ========== 替换视频说明 ========== -->
+<script>
+  // Show placeholder when video file doesn't exist
+  document.querySelectorAll('.video-wrap').forEach(wrap => {
+    const video = wrap.querySelector('video');
+    const placeholder = wrap.querySelector('.video-placeholder');
+    if (!video || !placeholder) return;
+
+    function showPlaceholder() {
+      video.classList.add('hidden');
+      placeholder.classList.add('show');
+    }
+    function showVideo() {
+      video.classList.remove('hidden');
+      placeholder.classList.remove('show');
+    }
+
+    // If video has source and loads successfully, show it
+    video.addEventListener('loadeddata', showVideo);
+    video.addEventListener('error', showPlaceholder);
+
+    // Also check after a short timeout (for 404 on source)
+    setTimeout(() => {
+      if (video.readyState === 0) showPlaceholder();
+    }, 500);
+  });
+</script>
+
+<div class="setup-note">
+  <p><strong>替换视频方法：</strong>把你的 mp4 视频文件放到 <code>videos/</code> 文件夹，按顺序命名 <code>demo-01.mp4</code> ~ <code>demo-06.mp4</code>，替换后刷新页面即可。也可编辑 HTML 中每个 <code>&lt;source src="..."&gt;</code> 改成自己的文件名。</p>
+</div>
+
+</body>
+</html>
