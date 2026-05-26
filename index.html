@@ -2,410 +2,868 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8" />
-<title>许毅 · 作品集</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>许毅 · 摄影摄像 / 短视频剪辑作品集</title>
+<meta name="description" content="许毅作品集：7年短视频拍摄剪辑经验，覆盖护肤美妆、品牌宣传、门店宣传、直播间引流、剪映爆款和AI提效工作流。" />
+<meta property="og:title" content="许毅 · 摄影摄像 / 短视频剪辑作品集" />
+<meta property="og:description" content="短视频拍摄剪辑、新媒体内容、直播间引流、品牌种草与AI提效案例。" />
+<link rel="canonical" href="https://xuyi44022-alt.github.io/portfolio/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --gold: #f0b840;
-    --orange: #e8782a;
-    --rust: #c44e1a;
-    --bg: #faf5ed;
-    --card: #fff;
-    --ink: #1a1a1a;
-    --ink2: #2d2d2d;
-    --muted: #8a7560;
-    --line: #e8d8c0;
-    --tag-bg: #fef3df;
-    --tag-text: #c44e1a;
+    --bg: #10100f;
+    --panel: #171715;
+    --panel-2: #1f1f1b;
+    --ink: #f7f1e7;
+    --muted: #b8aa98;
+    --soft: #776b5d;
+    --line: rgba(247,241,231,0.12);
+    --line-strong: rgba(247,241,231,0.22);
+    --gold: #e8b650;
+    --green: #8ebd7e;
+    --red: #d97257;
+    --card-radius: 8px;
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
+    margin: 0;
     font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
     background: var(--bg);
     color: var(--ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
+  a { color: inherit; }
+  img, video { max-width: 100%; }
 
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(250,245,237,0.85);
-    backdrop-filter: blur(12px);
+  .shell {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(16,16,15,0.88);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--line);
-    padding: 0 24px;
   }
   .nav-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 52px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
   }
-  .nav-brand { font-weight: 700; font-size: 17px; color: var(--rust); }
-  .nav-links { display: flex; gap: 24px; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: color .15s; }
-  .nav-links a:hover { color: var(--orange); }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    color: #1a1208;
+    background: var(--gold);
+    font-size: 15px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 7px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .nav-links a:hover { color: var(--ink); background: rgba(247,241,231,0.08); }
 
-  /* --- hero --- */
   .hero {
-    padding: 100px 24px 60px;
-    background: linear-gradient(160deg, #fef8ee 0%, #faf5ed 40%, #f7ecdb 100%);
-    text-align: center;
+    padding: 74px 0 34px;
+    border-bottom: 1px solid var(--line);
   }
-  .hero-badge {
-    display: inline-block; background: var(--rust); color: #fff;
-    font-size: 13px; font-weight: 600; padding: 4px 16px;
-    border-radius: 20px; letter-spacing: 0.04em; margin-bottom: 20px;
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(330px, 0.82fr);
+    gap: 34px;
+    align-items: end;
   }
-  .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
-  .hero h1 span { color: var(--rust); }
-  .hero .sub { font-size: 17px; color: var(--muted); margin: 12px 0 24px; }
-  .hero-metrics { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; }
-  .hero-metric .num { font-size: 30px; font-weight: 800; color: var(--orange); }
-  .hero-metric .label { font-size: 13px; color: var(--muted); }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(42px, 7vw, 86px);
+    line-height: 0.98;
+    letter-spacing: 0;
+  }
+  .hero-copy {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: var(--muted);
+    font-size: 18px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 7px;
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    background: rgba(247,241,231,0.06);
+  }
+  .btn.primary {
+    color: #16120a;
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .status-panel {
+    border: 1px solid var(--line);
+    border-radius: var(--card-radius);
+    background: var(--panel);
+    padding: 18px;
+  }
+  .status-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .role-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .role-list span {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    color: var(--ink);
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(247,241,231,0.08);
+  }
+  .role-list em {
+    color: var(--muted);
+    font-style: normal;
+    white-space: nowrap;
+  }
 
-  /* --- video gallery --- */
-  .gallery { max-width: 1100px; margin: 0 auto; padding: 60px 24px 80px; }
-  .gallery-header { margin-bottom: 48px; }
-  .gallery-header h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.01em; }
-  .gallery-header p { font-size: 15px; color: var(--muted); margin-top: 6px; }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 28px;
+    border: 1px solid var(--line);
+    background: var(--line);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+  }
+  .metric {
+    min-height: 112px;
+    padding: 18px;
+    background: #131311;
+  }
+  .metric strong {
+    display: block;
+    color: var(--gold);
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  .metric span {
+    display: block;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+  }
 
-  .video-grid { display: flex; flex-direction: column; gap: 48px; }
+  .section {
+    padding: 54px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+  }
+  .section h2 {
+    margin: 0;
+    font-size: clamp(26px, 3vw, 42px);
+    line-height: 1.08;
+  }
+  .section-note {
+    max-width: 520px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
 
-  .video-card {
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .filter {
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    color: var(--muted);
+    background: transparent;
+    min-height: 36px;
+    padding: 0 12px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .filter[aria-pressed="true"],
+  .filter:hover {
+    color: #19130a;
+    border-color: var(--gold);
+    background: var(--gold);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .work-grid.secondary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 14px;
+  }
+  .work-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    border: 1px solid var(--line);
+    border-radius: var(--card-radius);
+    background: var(--panel);
+    overflow: hidden;
+  }
+  .work-card.is-featured {
+    grid-column: span 2;
+  }
+  .media {
+    position: relative;
+    background: #050505;
+    border-bottom: 1px solid var(--line);
+  }
+  .media video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    background: #050505;
+  }
+  .media.portrait video { aspect-ratio: 9 / 12; }
+  .media-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 0 9px;
+    border-radius: 6px;
+    color: #15110a;
+    background: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .work-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 18px;
+  }
+  .work-body h3 {
+    margin: 0;
+    font-size: 21px;
+    line-height: 1.28;
+  }
+  .work-meta {
+    margin: 8px 0 0;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .work-desc {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 16px;
+  }
+  .tags span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 0 9px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .proof-card {
+    border: 1px solid var(--line);
+    border-radius: var(--card-radius);
+    background: var(--panel);
+    overflow: hidden;
+  }
+  .proof-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: top;
+    border-bottom: 1px solid var(--line);
+  }
+  .proof-card.tall img {
+    aspect-ratio: 647 / 1400;
+    object-fit: contain;
+    background: #0c0c0b;
+  }
+  .proof-card.wide { grid-row: span 2; }
+  .proof-card.wide img { aspect-ratio: 647 / 1400; }
+  .proof-card.profile img { aspect-ratio: 900 / 824; object-fit: contain; background: #0c0c0b; }
+  .proof-text {
+    padding: 15px;
+  }
+  .proof-text strong {
+    display: block;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .proof-text span {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .capability {
+    min-height: 120px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--card-radius);
+    background: var(--panel);
+  }
+  .capability strong {
+    display: block;
+    font-size: 16px;
+  }
+  .capability span {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    background: var(--card);
+    gap: 14px;
+  }
+  .contact-card {
     border: 1px solid var(--line);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: box-shadow .25s;
+    border-radius: var(--card-radius);
+    background: var(--panel);
+    padding: 18px;
   }
-  .video-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
-
-  .video-card .video-wrap {
-    position: relative;
-    background: #0a0a0a;
-    display: flex; align-items: center; justify-content: center;
-    min-height: 320px;
-  }
-  .video-card video {
-    width: 100%; height: 100%;
-    object-fit: contain;
+  .contact-card strong {
     display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
   }
-  .video-card video.hidden { display: none; }
-  .video-placeholder {
-    display: none;
-    flex-direction: column; align-items: center; justify-content: center;
-    gap: 12px; color: var(--muted); padding: 40px;
-    text-align: center;
-    position: absolute; inset: 0;
+  .contact-list {
+    display: grid;
+    gap: 10px;
   }
-  .video-placeholder.show { display: flex; }
-  .video-placeholder .ph-icon { font-size: 40px; opacity: 0.5; }
-  .video-placeholder .ph-text { font-size: 13px; }
-  .video-card .info {
-    padding: 28px 28px 28px 0;
-    display: flex; flex-direction: column; justify-content: center;
+  .contact-list a,
+  .contact-list span {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(247,241,231,0.08);
   }
-  .video-card .info .project-tag {
-    display: inline-block; font-size: 11px; font-weight: 600;
-    background: var(--tag-bg); color: var(--tag-text);
-    padding: 3px 12px; border-radius: 10px; margin-bottom: 12px;
-    width: fit-content;
-  }
-  .video-card .info h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
-  .video-card .info .meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
-  .video-card .info .desc { font-size: 14px; color: var(--ink2); line-height: 1.8; }
-  .video-card .info .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
-  .video-card .info .tags span {
-    font-size: 12px; color: var(--muted);
-    border: 1px solid var(--line); padding: 4px 12px; border-radius: 14px;
+  .contact-list a:hover { color: var(--ink); }
+  .footer {
+    padding: 24px 0 34px;
+    color: var(--soft);
+    font-size: 12px;
   }
 
-  @media (max-width: 768px) {
-    .video-card { grid-template-columns: 1fr; }
-    .video-card .info { padding: 0 24px 24px; }
-    .hero h1 { font-size: 28px; }
-    .hero-metrics { gap: 20px; }
-    .hero-metric .num { font-size: 24px; }
+  @media (max-width: 980px) {
+    .hero-grid,
+    .contact { grid-template-columns: 1fr; }
+    .metrics,
+    .work-grid,
+    .work-grid.secondary,
+    .proof-grid,
+    .capability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .work-card.is-featured { grid-column: span 1; }
+    .proof-card.wide { grid-row: span 1; }
+    .proof-card.wide img { aspect-ratio: 647 / 1400; }
   }
 
-  /* --- skills + contact --- */
-  .section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
-  .section h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
-  .section .sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-
-  .skill-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-  .skill-pills span {
-    font-size: 14px; background: var(--card); border: 1px solid var(--line);
-    padding: 10px 20px; border-radius: 24px; transition: all .15s;
+  @media (max-width: 640px) {
+    .shell { width: min(100% - 28px, 1180px); }
+    .nav-inner {
+      height: 56px;
+      min-height: 56px;
+      align-items: center;
+      flex-direction: row;
+      padding: 0;
+    }
+    .brand { gap: 7px; font-size: 14px; }
+    .brand-mark { width: 24px; height: 24px; font-size: 13px; border-radius: 6px; }
+    .nav-links { gap: 2px; }
+    .nav-links a { min-height: 30px; padding: 0 7px; font-size: 12px; }
+    .hero { padding: 36px 0 28px; }
+    h1 { font-size: 37px; line-height: 1.04; }
+    .hero-copy { margin-top: 16px; font-size: 15px; }
+    .hero-actions { margin-top: 20px; }
+    .btn { min-height: 38px; padding: 0 12px; font-size: 13px; }
+    .status-panel { display: none; }
+    .role-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
+    .role-list span {
+      display: block;
+      padding: 9px 0;
+      font-size: 13px;
+    }
+    .role-list em { display: block; margin-top: 2px; }
+    .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .work-grid,
+    .work-grid.secondary,
+    .proof-grid,
+    .capability-grid { grid-template-columns: 1fr; }
+    .metric { min-height: 94px; padding: 15px; }
+    .metric strong { font-size: 29px; }
+    .section { padding: 42px 0; }
+    .section-head { display: block; }
+    .section-note { margin-top: 10px; }
+    .filters {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .filters::-webkit-scrollbar { display: none; }
+    .filter { flex: 0 0 auto; min-height: 34px; }
+    .media video { aspect-ratio: 16 / 9; }
+    .media.portrait video { aspect-ratio: 9 / 12; }
+    .work-body { padding: 14px; }
+    .work-body h3 { font-size: 18px; }
+    .work-desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .proof-card.profile img { aspect-ratio: 900 / 824; object-fit: contain; background: #0c0c0b; }
+    .contact-list a,
+    .contact-list span {
+      display: block;
+      padding: 9px 0;
+    }
+    .contact-list a span,
+    .contact-list span span {
+      display: block;
+      border-bottom: 0;
+      padding: 0;
+    }
   }
-  .skill-pills span:hover { border-color: var(--gold); background: #fffbf2; }
-
-  .contact-row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .contact-row a, .contact-row span {
-    display: inline-flex; align-items: center; gap: 6px;
-    text-decoration: none; color: var(--ink); font-size: 14px; font-weight: 600;
-    padding: 10px 20px; background: var(--card); border: 1px solid var(--line);
-    border-radius: 24px; transition: all .15s;
-  }
-  .contact-row a:hover { border-color: var(--gold); background: #fffbf2; }
-
-  .footer-note { max-width: 1100px; margin: 0 auto; padding: 0 24px 20px; font-size: 13px; color: var(--muted); }
-
-  /* --- how to update --- */
-  .setup-note {
-    max-width: 1100px; margin: 0 auto; padding: 0 24px 40px;
-    font-size: 12px; color: var(--muted);
-  }
-  .setup-note code { background: #f0e8d8; padding: 1px 6px; border-radius: 3px; font-size: 12px; }
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="nav-inner">
-    <span class="nav-brand">许毅</span>
-    <ul class="nav-links">
-      <li><a href="#works">作品</a></li>
-      <li><a href="#skills">技能</a></li>
-      <li><a href="#contact">联系</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-badge">求职中 · 广州</div>
-  <h1>短视频全链路专家<br><span>× AI 工作流操盘手</span></h1>
-  <p class="sub">7 年短视频经验 · 从策划到发布 · 从 0 到商业化闭环</p>
-  <div class="hero-metrics">
-    <div class="hero-metric"><div class="num">7.2<span style="font-size:16px;font-weight:400;"> 万</span></div><div class="label">抖音粉丝</div></div>
-    <div class="hero-metric"><div class="num">1400<span style="font-size:16px;font-weight:400;"> 万</span></div><div class="label">单条最高播放</div></div>
-    <div class="hero-metric"><div class="num">150<span style="font-size:16px;font-weight:400;"> 万</span></div><div class="label">单月最高 GMV</div></div>
-    <div class="hero-metric"><div class="num">7<span style="font-size:16px;font-weight:400;"> 年</span></div><div class="label">全链路经验</div></div>
-  </div>
-</section>
-
-<!-- ========== VIDEO GALLERY ========== -->
-<section class="gallery" id="works">
-  <div class="gallery-header">
-    <h2>作品展示</h2>
-    <p>点击视频播放，每段作品附有项目背景说明</p>
-  </div>
-
-  <div class="video-grid">
-
-    <!-- ====== 项目 1 ====== -->
-    <div class="video-card">
-      <div class="video-wrap">
-        <video controls preload="metadata">
-          <source src="videos/demo-01.mp4" type="video/mp4" />
-        </video>
-        <div class="video-placeholder">
-          <div class="ph-icon">🎬</div>
-          <div class="ph-text">视频待添加<br>将 mp4 文件放入 videos/ 文件夹</div>
-        </div>
-      </div>
-      <div class="info">
-        <span class="project-tag">个人 IP</span>
-        <h3>「晚风」抖音个人 IP</h3>
-        <div class="meta">2019 — 2022 · 7.2 万粉丝 · 116.4 万赞</div>
-        <p class="desc">独立完成选题策划、拍摄、剪辑、运营全流程。从 0 到 1 验证了个人起号的全链路方法论，沉淀大量剪辑教程和高播放内容。</p>
-        <div class="tags">
-          <span>个人IP</span><span>剪辑教程</span><span>账号增长</span>
-        </div>
-      </div>
+  <nav class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="回到首页">
+        <span class="brand-mark">许</span>
+        <span>许毅作品集</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#works">作品</a></li>
+        <li><a href="#proof">数据</a></li>
+        <li><a href="#skills">能力</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- ====== 项目 2 ====== -->
-    <div class="video-card">
-      <div class="video-wrap">
-        <video controls preload="metadata">
-          <source src="videos/demo-02.mp4" type="video/mp4" />
-        </video>
-        <div class="video-placeholder">
-          <div class="ph-icon">🎬</div>
-          <div class="ph-text">视频待添加</div>
+  <main id="top">
+    <header class="hero">
+      <div class="shell">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">广州 · 随时到岗 · 10-15K</div>
+            <h1>摄影摄像 / 短视频剪辑<br>直播间引流内容</h1>
+            <p class="hero-copy">7年短视频拍摄与后期经验，覆盖护肤美妆、门店宣传、企业文化片、培训视频、品牌种草和直播间引流。能从选题脚本、拍摄布光、剪辑调色到发布复盘完整交付。</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#works">查看作品</a>
+              <a class="btn" href="mailto:437062041@qq.com">发送面试邀请</a>
+            </div>
+          </div>
+          <aside class="status-panel" aria-label="求职信息">
+            <div class="status-title">
+              <span>简历匹配岗位</span>
+              <span>Portfolio 2026</span>
+            </div>
+            <div class="role-list">
+              <span>摄影 / 摄像师 <em>主投</em></span>
+              <span>短视频拍摄剪辑 <em>强匹配</em></span>
+              <span>新媒体内容 <em>强匹配</em></span>
+              <span>直播间引流 <em>加分项</em></span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="metrics" aria-label="核心数据">
+          <div class="metric"><strong>7年</strong><span>短视频拍摄剪辑经验</span></div>
+          <div class="metric"><strong>7.2万</strong><span>账号最高粉丝</span></div>
+          <div class="metric"><strong>1400万</strong><span>单条最高播放</span></div>
+          <div class="metric"><strong>150万</strong><span>项目单月GMV</span></div>
         </div>
       </div>
-      <div class="info">
-        <span class="project-tag">爆款内容</span>
-        <h3>剪映首批推广 · 单条 1400 万播放</h3>
-        <div class="meta">2020 — 2021 · 剪映 APP 野生推广达人</div>
-        <p class="desc">在剪映早期阶段输出大量教程内容，成为社区首批 KOL。对工具类内容的敏感度和规模传播能力得到验证。</p>
-        <div class="tags">
-          <span>爆款内容</span><span>工具推广</span><span>剪映教程</span>
+    </header>
+
+    <section class="section" id="works">
+      <div class="shell">
+        <div class="section-head">
+          <h2>精选作品墙</h2>
+          <p class="section-note">按 BOSS 简历里的能力排序：先证明流量和平台表达，再展示护肤美妆、门店宣传、品牌片、培训和直播转化。</p>
+        </div>
+
+        <div class="filters" aria-label="作品筛选">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">全部</button>
+          <button class="filter" type="button" data-filter="viral">爆款</button>
+          <button class="filter" type="button" data-filter="beauty">护肤美妆</button>
+          <button class="filter" type="button" data-filter="store">门店宣传</button>
+          <button class="filter" type="button" data-filter="brand">品牌 / 培训</button>
+          <button class="filter" type="button" data-filter="travel">旅拍 / 产品</button>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card is-featured" data-category="viral">
+            <div class="media portrait">
+              <video controls preload="metadata" poster="posters/demo-01.jpg">
+                <source src="videos/demo-01.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">爆款教程</span>
+            </div>
+            <div class="work-body">
+              <h3>剪映 APP 推广 / 抖音教程爆款</h3>
+              <p class="work-meta">2019-2020 · 单条最高1400万播放 · 账号最高7.2万粉丝</p>
+              <p class="work-desc">剪映早期推广达人，围绕功能教程、卡点玩法和使用场景做短视频表达。重点证明平台敏感度、教程拆解、前三秒钩子和自然传播能力。</p>
+              <div class="tags"><span>剪映教程</span><span>抖音达人</span><span>爆款传播</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="beauty">
+            <div class="media">
+              <video controls preload="metadata" poster="posters/demo-02.jpg">
+                <source src="videos/demo-02.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">产品片</span>
+            </div>
+            <div class="work-body">
+              <h3>护肤品牌产品片 · 透明质酸主题</h3>
+              <p class="work-meta">产品卖点 · 视觉包装 · 护肤内容</p>
+              <p class="work-desc">将护肤成分、使用场景和品牌调性做视觉化表达，适合展示美妆日化类产品拍摄、剪辑包装和卖点提炼能力。</p>
+              <div class="tags"><span>护肤美妆</span><span>产品展示</span><span>品牌种草</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="store beauty">
+            <div class="media">
+              <video controls preload="metadata" poster="posters/demo-03.jpg">
+                <source src="videos/demo-03.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">服务流程</span>
+            </div>
+            <div class="work-body">
+              <h3>护肤门店服务流程 / 教学展示</h3>
+              <p class="work-meta">护理流程 · 用户理解 · 转化前教育</p>
+              <p class="work-desc">以服务步骤和用户体验为主线，让门店护理流程更易理解，适合门店宣传、培训视频和销售转化前教育。</p>
+              <div class="tags"><span>门店宣传</span><span>培训视频</span><span>服务展示</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="brand beauty">
+            <div class="media">
+              <video controls preload="metadata" poster="posters/demo-04.jpg">
+                <source src="videos/demo-04.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">品牌片</span>
+            </div>
+            <div class="work-body">
+              <h3>护肤品牌企业宣传 / 产品展示</h3>
+              <p class="work-meta">企业空间 · 产品陈列 · 品牌专业感</p>
+              <p class="work-desc">通过企业空间、产品陈列和品牌画面建立专业形象，对应简历里的企业文化 IP、门店宣传片和产品视频制作经验。</p>
+              <div class="tags"><span>企业宣传</span><span>产品拍摄</span><span>品牌形象</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="store beauty">
+            <div class="media">
+              <video controls preload="metadata" poster="posters/demo-05.jpg">
+                <source src="videos/demo-05.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">门店环境</span>
+            </div>
+            <div class="work-body">
+              <h3>医美护肤门店环境 / 服务宣传</h3>
+              <p class="work-meta">门店空间 · 服务场景 · 信任感</p>
+              <p class="work-desc">展示门店环境、空间质感和护理场景，适合投递本地生活、医美护肤、品牌新媒体和门店宣传岗位。</p>
+              <div class="tags"><span>门店宣传</span><span>场景布光</span><span>品牌质感</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="brand">
+            <div class="media">
+              <video controls preload="metadata" poster="posters/demo-06.jpg">
+                <source src="videos/demo-06.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">培训记录</span>
+            </div>
+            <div class="work-body">
+              <h3>课程活动 / 培训视频 / 复盘素材</h3>
+              <p class="work-meta">培训记录 · 内容组织 · 数据复盘</p>
+              <p class="work-desc">补充展示课程活动、培训记录和复盘类内容能力，适合企业培训、品牌活动和内部传播素材交付。</p>
+              <div class="tags"><span>培训视频</span><span>活动记录</span><span>复盘材料</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top:34px;">
+          <h2>补充作品</h2>
+          <p class="section-note">新素材更适合放在补充区：证明旅拍摄影、生活方式内容和产品短片能力，拓宽岗位匹配面。</p>
+        </div>
+        <div class="work-grid secondary">
+          <article class="work-card" data-category="travel">
+            <div class="media">
+              <video controls preload="metadata" poster="posters/demo-07.jpg">
+                <source src="videos/demo-07.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">航旅记录</span>
+            </div>
+            <div class="work-body">
+              <h3>航旅 / 旅拍转场记录</h3>
+              <p class="work-meta">旅拍摄影 · 生活方式 · 过程记录</p>
+              <p class="work-desc">补强简历里的旅拍摄影和视频摄影经历，展示旅途场景、过程镜头和生活方式内容的拍摄组织能力。</p>
+              <div class="tags"><span>旅拍</span><span>生活方式</span><span>转场记录</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="travel">
+            <div class="media">
+              <video controls preload="metadata" poster="posters/demo-08.jpg">
+                <source src="videos/demo-08.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">户外旅拍</span>
+            </div>
+            <div class="work-body">
+              <h3>户外人物 / 风景氛围短片</h3>
+              <p class="work-meta">自然光 · 人物运动 · 氛围表达</p>
+              <p class="work-desc">适合展示非棚拍场景下的人物调度、风景构图和自然光氛围把控，可作为摄影摄像岗位的补充样片。</p>
+              <div class="tags"><span>户外拍摄</span><span>人物构图</span><span>氛围片</span></div>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="travel">
+            <div class="media portrait">
+              <video controls preload="metadata" poster="posters/demo-09.jpg">
+                <source src="videos/demo-09.mp4" type="video/mp4" />
+              </video>
+              <span class="media-tag">产品短片</span>
+            </div>
+            <div class="work-body">
+              <h3>饮品产品展示短片</h3>
+              <p class="work-meta">产品拍摄 · 竖屏短视频 · 轻量种草</p>
+              <p class="work-desc">补充展示小产品、饮品、生活方式类竖屏短片能力，可用于品牌日常内容和轻量信息流素材。</p>
+              <div class="tags"><span>产品拍摄</span><span>竖屏内容</span><span>轻量种草</span></div>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ====== 项目 3 ====== -->
-    <div class="video-card">
-      <div class="video-wrap">
-        <video controls preload="metadata">
-          <source src="videos/demo-03.mp4" type="video/mp4" />
-        </video>
-        <div class="video-placeholder">
-          <div class="ph-icon">🎬</div>
-          <div class="ph-text">视频待添加</div>
+    <section class="section" id="proof">
+      <div class="shell">
+        <div class="section-head">
+          <h2>数据与结果</h2>
+          <p class="section-note">视频展示质感，截图证明结果。求职页里把“能拍能剪”和“能服务转化”放在一起，招聘方更容易判断价值。</p>
+        </div>
+        <div class="proof-grid">
+          <article class="proof-card wide tall">
+            <img src="assets/proofs/douyin-proof-01.jpg" alt="抖音爆款作品数据截图" loading="lazy" />
+            <div class="proof-text">
+              <strong>剪映教程爆款截图</strong>
+              <span>用于支撑单条高播放和账号增长经历。</span>
+            </div>
+          </article>
+          <article class="proof-card tall">
+            <img src="assets/proofs/douyin-proof-02.jpg" alt="抖音教程作品截图" loading="lazy" />
+            <div class="proof-text">
+              <strong>抖音教程内容证明</strong>
+              <span>展示工具教程、卡点玩法和平台表达。</span>
+            </div>
+          </article>
+          <article class="proof-card">
+            <img src="assets/proofs/kuaishou-trade.jpg" alt="快手小店交易数据截图" loading="lazy" />
+            <div class="proof-text">
+              <strong>快手交易数据截图</strong>
+              <span>保留一张核心数据图，用于支撑直播引流、品牌种草和商业转化经历。</span>
+            </div>
+          </article>
+          <article class="proof-card">
+            <img src="assets/proofs/profit-proof.jpg" alt="项目利润数据截图" loading="lazy" />
+            <div class="proof-text">
+              <strong>项目利润数据</strong>
+              <span>证明内容交付与业务结果之间的连接。</span>
+            </div>
+          </article>
+          <article class="proof-card profile">
+            <img src="assets/profile/douyin-profile.jpg" alt="抖音晚风主页截图，显示7.2万粉丝" loading="lazy" />
+            <div class="proof-text">
+              <strong>抖音主页粉丝截图</strong>
+              <span>主页显示 7.2 万粉丝，页面数据已同步修正。</span>
+            </div>
+          </article>
         </div>
       </div>
-      <div class="info">
-        <span class="project-tag">品牌操盘</span>
-        <h3>快手护肤品牌 IP 操盘</h3>
-        <div class="meta">2022 · 单月 GMV 150 万</div>
-        <p class="desc">入职公司后主导快手护肤 IP 品牌的内容策略与执行。从账号定位、日常内容到直播引流全链路负责，实现商业闭环。</p>
-        <div class="tags">
-          <span>品牌操盘</span><span>直播带货</span><span>商业变现</span>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="shell">
+        <div class="section-head">
+          <h2>能力矩阵</h2>
+          <p class="section-note">按招聘方筛简历的方式组织：拍摄、剪辑、策划、直播间、商业转化和 AI 提效。</p>
+        </div>
+        <div class="capability-grid">
+          <div class="capability"><strong>拍摄执行</strong><span>人物口播、产品展示、门店宣传、直播引流、品牌种草。</span></div>
+          <div class="capability"><strong>后期制作</strong><span>粗剪、精剪、节奏优化、字幕、调色、包装。</span></div>
+          <div class="capability"><strong>内容策划</strong><span>账号定位、选题策划、脚本撰写、卖点提炼、前三秒钩子。</span></div>
+          <div class="capability"><strong>直播间支持</strong><span>布景、灯光、引流短视频、产品展示节奏、场景优化。</span></div>
+          <div class="capability"><strong>AI 提效</strong><span>GPT、DeepSeek、Obsidian 辅助脚本、方案、素材归类和复盘。</span></div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ====== 项目 4 ====== -->
-    <div class="video-card">
-      <div class="video-wrap">
-        <video controls preload="metadata">
-          <source src="videos/demo-04.mp4" type="video/mp4" />
-        </video>
-        <div class="video-placeholder">
-          <div class="ph-icon">🎬</div>
-          <div class="ph-text">视频待添加</div>
+    <section class="section" id="contact">
+      <div class="shell contact">
+        <div class="contact-card">
+          <strong>联系方式</strong>
+          <div class="contact-list">
+            <a href="mailto:437062041@qq.com"><span>邮箱</span><span>437062041@qq.com</span></a>
+            <span><span>微信</span><span>Xuyi9901</span></span>
+            <span><span>城市</span><span>广州 · 白云区</span></span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <strong>求职意向</strong>
+          <div class="contact-list">
+            <span><span>岗位</span><span>摄影摄像师 / 短视频剪辑 / 新媒体内容</span></span>
+            <span><span>赛道</span><span>短视频MCN / 品牌电商 / 本地生活 / 美妆护肤</span></span>
+            <a href="https://www.douyin.com/user/WanFeng789" target="_blank" rel="noopener noreferrer"><span>抖音</span><span>晚风</span></a>
+          </div>
         </div>
       </div>
-      <div class="info">
-        <span class="project-tag">起号案例</span>
-        <h3>知识类账号 · 6 个月 0 → 7.8 万粉丝</h3>
-        <div class="meta">2020 — 2022 · 冷启动全流程</div>
-        <p class="desc">从零搭建知识类抖音账号，定位、选题体系、发布节奏全部独立完成。验证了知识类内容的冷启动方法论。</p>
-        <div class="tags">
-          <span>知识付费</span><span>冷启动</span><span>起号方法论</span>
-        </div>
-      </div>
-    </div>
+    </section>
+  </main>
 
-    <!-- ====== 项目 5 —— 占位 ====== -->
-    <div class="video-card">
-      <div class="video-wrap">
-        <video controls preload="metadata">
-          <source src="videos/demo-05.mp4" type="video/mp4" />
-        </video>
-        <div class="video-placeholder">
-          <div class="ph-icon">🎬</div>
-          <div class="ph-text">视频待添加</div>
-        </div>
-      </div>
-      <div class="info">
-        <span class="project-tag">日化案例</span>
-        <h3>「北欧早晨」日化信息流</h3>
-        <div class="meta">日化文案 · 混剪 · 投放素材</div>
-        <p class="desc">日化品类短视频内容创作，包括产品文案策划、素材混剪、信息流投放素材制作。熟悉日化赛道的文案风格和投放逻辑。</p>
-        <div class="tags">
-          <span>日化文案</span><span>信息流</span><span>混剪</span>
-        </div>
-      </div>
-    </div>
+  <footer class="footer">
+    <div class="shell">© 2026 许毅 · Portfolio for BOSS 求职投递</div>
+  </footer>
 
-    <!-- ====== 项目 6 —— 占位 ====== -->
-    <div class="video-card">
-      <div class="video-wrap">
-        <video controls preload="metadata">
-          <source src="videos/demo-06.mp4" type="video/mp4" />
-        </video>
-        <div class="video-placeholder">
-          <div class="ph-icon">🎬</div>
-          <div class="ph-text">视频待添加</div>
-        </div>
-      </div>
-      <div class="info">
-        <span class="project-tag">AI 自动化</span>
-        <h3>AI 内容创作管线</h3>
-        <div class="meta">Obsidian + DeepSeek + Remotion</div>
-        <p class="desc">从口述录音到成品视频的半自动化管线：语音转文字 → AI 整理去自嗨 → 人工打磨 → 自动合成字幕/配乐/B-roll。单人产能大幅提升。</p>
-        <div class="tags">
-          <span>AI 自动化</span><span>工作流</span><span>效率工具</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ========== SKILLS ========== -->
-<section class="section" id="skills">
-  <h2>核心能力</h2>
-  <p class="sub">短视频全链路 × AI 工具链</p>
-  <div class="skill-pills">
-    <span>前期策划 · 选题定位</span>
-    <span>场景布光 · 画面构图</span>
-    <span>拍摄执行 · 多机位</span>
-    <span>后期剪辑 · 达芬奇调色</span>
-    <span>抖音 / 快手运营</span>
-    <span>直播引流 · 带货</span>
-    <span>账号冷启动 · 起号</span>
-    <span>数据分析 · 复盘</span>
-    <span>剪映全功能精通</span>
-    <span>Claude Code 自动化</span>
-    <span>Obsidian 知识管理</span>
-    <span>AI 提示词工程</span>
-    <span>Remotion 视频合成</span>
-    <span>MiniMax 配音/配乐</span>
-    <span>DeepSeek 配置联动</span>
-  </div>
-</section>
-
-<!-- ========== CONTACT ========== -->
-<section class="section" id="contact">
-  <h2>联系我</h2>
-  <p class="sub">期待与您交流</p>
-  <div class="contact-row">
-    <span>📍 广州 · 白云区</span>
-    <a href="https://www.douyin.com/user/WanFeng789" target="_blank">🎵 抖音「晚风」</a>
-    <span>📱 微信 / 手机同号</span>
-    <span>📧 面试邀请请发邮件</span>
-  </div>
-</section>
-
-<div class="footer-note" style="padding-bottom:40px;">
-  <p>求职意向：摄影摄像师 / 内容创作主管 / 账号运营负责人 / IP 打造操盘手</p>
-  <p style="margin-top:4px;">目标赛道：短视频 MCN · 品牌电商 · 本地生活 · 美妆服饰 · 知识付费</p>
-</div>
-
-<!-- ========== 替换视频说明 ========== -->
 <script>
-  // Show placeholder when video file doesn't exist
-  document.querySelectorAll('.video-wrap').forEach(wrap => {
-    const video = wrap.querySelector('video');
-    const placeholder = wrap.querySelector('.video-placeholder');
-    if (!video || !placeholder) return;
+  const buttons = document.querySelectorAll(".filter");
+  const cards = document.querySelectorAll(".work-card");
 
-    function showPlaceholder() {
-      video.classList.add('hidden');
-      placeholder.classList.add('show');
-    }
-    function showVideo() {
-      video.classList.remove('hidden');
-      placeholder.classList.remove('show');
-    }
-
-    // If video has source and loads successfully, show it
-    video.addEventListener('loadeddata', showVideo);
-    video.addEventListener('error', showPlaceholder);
-
-    // Also check after a short timeout (for 404 on source)
-    setTimeout(() => {
-      if (video.readyState === 0) showPlaceholder();
-    }, 500);
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.dataset.filter;
+      buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+      cards.forEach((card) => {
+        const categories = (card.dataset.category || "").split(" ");
+        card.hidden = target !== "all" && !categories.includes(target);
+      });
+    });
   });
 </script>
-
-<div class="setup-note">
-  <p><strong>替换视频方法：</strong>把你的 mp4 视频文件放到 <code>videos/</code> 文件夹，按顺序命名 <code>demo-01.mp4</code> ~ <code>demo-06.mp4</code>，替换后刷新页面即可。也可编辑 HTML 中每个 <code>&lt;source src="..."&gt;</code> 改成自己的文件名。</p>
-</div>
-
 </body>
 </html>
