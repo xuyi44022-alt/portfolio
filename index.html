@@ -467,6 +467,13 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
+  /* 单案例时：居中限宽展示，避免孤卡占半格 */
+  .case-card:only-child {
+    grid-column: 1 / -1;
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+  }
   .case-card {
     display: flex;
     flex-direction: column;
@@ -939,22 +946,9 @@
       <div class="shell">
         <div class="section-head">
           <h2>项目经历</h2>
-          <p class="section-note">不只是单条作品，而是我以什么角色参与过、交付了什么。工作时长如实标注，可追溯。</p>
+          <p class="section-note">不只是单条作品，而是我以什么角色参与过、交付了什么。时长与结果如实标注。</p>
         </div>
         <div class="case-grid">
-          <article class="case-card">
-            <span class="case-tag diag">账号诊断 · 入职前咨询</span>
-            <h3>猴子姐姐 — 27.6万粉家庭号诊断与选题转型</h3>
-            <p class="case-meta">2026.05 · 入职前诊断 + 短期入职（约1周）</p>
-            <div class="case-role"><b>我的角色</b> 入职前账号诊断 / 内容方向建议</div>
-            <p class="case-desc">入职前为该 27.6万粉潮汕宝妈账号做诊断：按「选题类型 × 互动量」对其代表作品做交叉分析，拆出内容密码——家庭仪式感类均赞 6266，观点输出类仅 488。据此给出选题转型方向，并产出入职首日实操手册。后因账号节奏与个人判断不符短期离开。</p>
-            <div class="case-results">
-              <p><b>怎么做的：</b>数据交叉分析定位最强内容赛道（仪式感类），形成可执行转型方案 + 首日实操手册。</p>
-              <p><b>结果：</b>明确账号 7 类选题的表现差异与优先级，交付诊断方案。</p>
-            </div>
-            <div class="case-tags"><span>账号诊断</span><span>数据分析</span><span>选题策略</span></div>
-          </article>
-
           <article class="case-card">
             <span class="case-tag biz">商业项目 · 独立交付</span>
             <h3>中古奢侈品 — 《沉浸式改包》系列</h3>
